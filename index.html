@@ -37,7 +37,7 @@
     </header>
 
     <!-- Main Presentation Container -->
-    <main class="flex-grow flex items-center justify-center p-4 sm:p-8 max-w-6xl mx-auto w-full">
+    <main class="flex-grow relative p-4 sm:p-8 max-w-6xl mx-auto w-full">
 
         <!-- Slide 1: Executive Summary -->
         <div class="slide active flex-col w-full space-y-6" data-slide="1">
@@ -286,13 +286,20 @@
             to { opacity: 1; transform: scale(1); }
         }
         .slide {
-            display: none;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
         .slide.active {
-            display: flex;
             opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
         }
         .slide .animate-in {
             opacity: 0;
@@ -344,20 +351,10 @@
             else currentSlide = n;
 
             const slides = document.querySelectorAll('.slide');
-            const leavingSlide = slides[currentSlide === 1 ? totalSlides : currentSlide - 1];
+            slides.forEach(s => s.classList.remove('active'));
             const enteringSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
-
-            if (leavingSlide && leavingSlide !== enteringSlide) {
-                leavingSlide.style.opacity = '0';
-                setTimeout(() => {
-                    leavingSlide.classList.remove('active');
-                    leavingSlide.style.opacity = '';
-                }, 400);
-            }
-
             if (enteringSlide) {
                 enteringSlide.classList.add('active');
-                enteringSlide.style.opacity = '1';
                 triggerSlideAnimations(enteringSlide);
             }
 
