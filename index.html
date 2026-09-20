@@ -416,6 +416,14 @@
             .content-card { padding: 20px; }
             .chart-container { padding: 20px; }
         }
+        @media (max-width: 640px) {
+            .metric-grid { grid-template-columns: 1fr; }
+            .controls { flex-direction: column; gap: 10px; }
+            .slide { padding: 30px 20px; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .slide-header { font-size: 1.5rem; }
+        }
     </style>
     <script>
         let currentSlide = 1;
