@@ -1,429 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aetheria Project - Investor Deck</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
-    .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-</style>
-</head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
-
-    <!-- Top Navigation Bar -->
-    <header class="w-full px-6 py-4 flex justify-between items-center border-b border-slate-800/80 bg-slate-950/50 backdrop-sticky top-0 z-50">
-        <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                <i class="fa-solid fa-waveform-lines text-white text-lg"></i>
-            </div>
-            <div>
-                <h1 class="font-bold text-lg tracking-tight text-white">Aetheria Project</h1>
-                <p class="text-xs text-slate-400">Investor Deck — $242B Combined TAM</p>
-            </div>
-        </div>
-        <div class="flex items-center space-x-3">
-            <button id="autoPlayBtn" onclick="toggleAutoPlay()" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-1.5">
-                <i class="fa-solid fa-play text-indigo-400" id="playIcon"></i>
-                <span id="playText">Auto-Run</span>
-            </button>
-            <span id="slideIndicator" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-950 text-indigo-300 border border-indigo-800/50">1 / 10</span>
-        </div>
-    </header>
-
-    <!-- Main Presentation Container -->
-    <main class="flex-grow relative p-4 sm:p-8 max-w-6xl mx-auto w-full" style="height: 300px;">
-
-        <!-- Slide 1: Hero -->
-        <div class="slide slide-hero active" data-slide="1">
-            <div class="hero-content">
-                <h1>AETHERIA PROJECT</h1>
-                <p>Two AI-Powered Mobile Ecosystems<br>Built for Autonomy & Companionship</p>
-                <div class="tagline">$242B Combined Market Opportunity</div>
-            </div>
-        </div>
-
-        <!-- Slide 2: The Opportunity -->
-        <div class="slide slide-content" data-slide="2">
-            <h2 class="slide-header">The Market Opportunity</h2>
-            <p class="slide-subtitle">A $242B+ Untapped Market in Mobile AI</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">EVE COMPANION</h3>
-                    <p class="text-slate-300"><strong>Autonomous AI Assistant</strong><br>Complete phone control + autonomous execution. Enterprise mobile automation for sales, support, field ops.</p>
-                    <p style="margin-top: 15px; font-size: 1.1rem; color: var(--accent);"><strong>TAM: $180B+</strong></p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">FOREVER COMPANION</h3>
-                    <p class="text-slate-300"><strong>Ethical AI Pet Companion</strong><br>Emotionally-aware, persistent relationship. Wellness-first + guilt-free engagement.</p>
-                    <p style="margin-top: 15px; font-size: 1.1rem; color: var(--accent-green);"><strong>TAM: $62B+</strong></p>
-                </div>
-            </div>
-            <div class="metric-grid">
-                <div class="metric-box"><div class="metric-value">$242B</div><div class="metric-label">Combined TAM</div></div>
-                <div class="metric-box"><div class="metric-value">2.8B</div><div class="metric-label">Mobile Users</div></div>
-                <div class="metric-box"><div class="metric-value">25%</div><div class="metric-label">YoY Growth</div></div>
-                <div class="metric-box"><div class="metric-value">$4.2T</div><div class="metric-label">Mobile Economy</div></div>
-            </div>
-        </div>
-
-        <!-- Slide 3: EVE - The Problem -->
-        <div class="slide slide-content" data-slide="3">
-            <h2 class="slide-header">EVE: The Problem</h2>
-            <p class="slide-subtitle">Mobile Automation is Fragmented & Powerless</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Current Limitations</h3>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>iPhone Shortcuts: Janky, disconnected logic</li>
-                        <li>Android Automation: Outdated, unreliable</li>
-                        <li>Google Assistant/Siri: Can only suggest, not execute</li>
-                        <li>IFTTT/Zapier: Manual setup, no autonomy</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">The Gap</h3>
-                    <p class="text-slate-300 mb-3">No AI agent that can:</p>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>Think independently</li>
-                        <li>Make autonomous decisions</li>
-                        <li>Execute across entire phone</li>
-                        <li>Learn from patterns</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="glass-card p-5 rounded-2xl" style="width: 100%; margin-top: 20px;">
-                <h3 class="font-semibold text-white mb-3">Three Revenue Segments</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
-                    <div><p style="color: var(--accent); font-weight: 600;">Consumer</p><p class="text-slate-300">$15B TAM — Power users, developers, researchers</p></div>
-                    <div><p style="color: var(--accent-green); font-weight: 600;">Enterprise</p><p class="text-slate-300">$140B TAM — Sales, support, field ops automation</p></div>
-                    <div><p style="color: var(--accent-purple); font-weight: 600;">Developer API</p><p class="text-slate-300">$25B TAM — Third-party integrations & marketplace</p></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: EVE - Why It Wins -->
-        <div class="slide slide-content" data-slide="4">
-            <h2 class="slide-header">EVE: Unfair Advantages</h2>
-            <p class="slide-subtitle">Why Eve Dominates</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Autonomous Execution</h3>
-                    <p class="text-slate-300">Eve doesn't just suggest—it executes autonomously based on learned preferences. Competitors require confirmation for every action.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Privacy-First Architecture</h3>
-                    <p class="text-slate-300">Wake word detection runs 100% on-device. No voice data leaves your phone. Faster than Google, more private than Alexa.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Hybrid AI Model</h3>
-                    <p class="text-slate-300">70% cheaper than pure cloud. Sub-200ms response time. Local tasks instant, complex reasoning delegated to cloud.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Context-Aware Intelligence</h3>
-                    <p class="text-slate-300">Understands app context, screen state, time of day, user patterns. No other AI knows your phone this deeply.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 5: EVE - Competitive Landscape -->
-        <div class="slide slide-content" data-slide="5">
-            <h2 class="slide-header">EVE vs. The Competition</h2>
-            <p class="slide-subtitle">Why Eve Wins Every Category</p>
-            <div class="glass-card p-5 rounded-2xl overflow-x-auto">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>EVE</th>
-                            <th>Google Assistant</th>
-                            <th>Siri / Shortcuts</th>
-                            <th>Alexa</th>
-                            <th>IFTTT / Zapier</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>Autonomous Execution</strong></td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
-                        <tr><td><strong>On-Device Wake Word</strong></td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td><td class="cross">N/A</td></tr>
-                        <tr><td><strong>Full Phone Control</strong></td><td class="check">✓</td><td class="cross">Limited</td><td class="cross">Limited</td><td class="cross">✗</td><td class="cross">✗</td></tr>
-                        <tr><td><strong>Persistent Memory</strong></td><td class="check">✓</td><td class="cross">Session only</td><td class="cross">✗</td><td class="cross">Session only</td><td class="cross">✗</td></tr>
-                        <tr><td><strong>Privacy-First</strong></td><td class="check">✓</td><td class="cross">Cloud</td><td class="cross">Cloud</td><td class="cross">Cloud</td><td class="cross">Cloud</td></tr>
-                        <tr><td><strong>Offline Capable</strong></td><td class="check">✓</td><td class="cross">✗</td><td class="cross">Limited</td><td class="cross">✗</td><td class="cross">✗</td></tr>
-                        <tr><td><strong>Sub-200ms Local</strong></td><td class="check">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
-                        <tr><td><strong>Developer API</strong></td><td class="check">✓</td><td class="cross">Limited</td><td class="cross">Limited</td><td class="cross">Skills only</td><td class="check">✓</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Slide 6: EVE - The Solution -->
-        <div class="slide slide-content" data-slide="6">
-            <h2 class="slide-header">EVE: The Solution</h2>
-            <p class="slide-subtitle">First True Autonomous Mobile Agent</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Tiered Inference Pipeline</h3>
-                    <p class="text-slate-300 text-sm">SkillMatcher → FastLLM → LiteRT → Llama.cpp → Cloud fallback. Local-first, privacy-preserving, sub-500ms latency.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Full Phone Control</h3>
-                    <p class="text-slate-300 text-sm">Accessibility service + Shizuku root + ADB bridge. App launch, form fill, data extraction, cross-app workflows.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Persistent Memory</h3>
-                    <p class="text-slate-300 text-sm">Vector RAG (ML Kit embeddings) + SQLite. Remembers preferences, contexts, patterns across sessions.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">NPU Acceleration</h3>
-                    <p class="text-slate-300 text-sm">MediaPipe GenAI on MediaTek NPU. Gemma 2B / Qwen 1.5B at 2-4 tokens/sec on-device.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 7: Forever Companion - The Problem -->
-        <div class="slide slide-content" data-slide="7">
-            <h2 class="slide-header">Forever Companion: The Problem</h2>
-            <p class="slide-subtitle">AI Companions Today Are Shallow, Extractive, or Unsafe</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Replika / Character.ai</h3>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>No persistent memory across sessions</li>
-                        <li>Optimize for engagement, not wellness</li>
-                        <li>Cloud-dependent, privacy risks</li>
-                        <li>No emotional intelligence</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Tamagotchi / Digital Pets</h3>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>Shallow mechanics, no conversation</li>
-                        <li>Predatory monetization (energy refills)</li>
-                        <li>No AI, just scripts</li>
-                        <li>Designed for addiction, not connection</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="glass-card p-5 rounded-2xl" style="width: 100%; margin-top: 20px;">
-                <h3 class="font-semibold text-white mb-3">The Opportunity: Ethical AI Relationship</h3>
-                <p class="text-slate-300">A persistent, emotionally-aware companion that grows with you — local-first, privacy-respecting, designed for genuine wellness. $62B+ market (mental wellness + AI companions + digital pets).</p>
-            </div>
-        </div>
-
-        <!-- Slide 8: Forever Companion - The Solution -->
-        <div class="slide slide-content" data-slide="8">
-            <h2 class="slide-header">Forever Companion: The Solution</h2>
-            <p class="slide-subtitle">A Living, Breathing AI Relationship — Built on Trust</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Persistent Identity</h3>
-                    <p class="text-slate-300 text-sm">Local vector memory + Rhubarb lip-sync + TTS voice. Remembers every conversation, milestone, preference.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Emotional Intelligence</h3>
-                    <p class="text-slate-300 text-sm">Real-time mood detection via voice/text analysis. Adapts personality, tone, responses to your emotional state.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Wellness-First Design</h3>
-                    <p class="text-slate-300 text-sm">No dark patterns. Encourages breaks, celebrates growth, respects boundaries. Guilt-free engagement.</p>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Rhubarb Lip-Sync</h3>
-                    <p class="text-slate-300 text-sm">First native Android port of Rhubarb. Real-time phoneme-driven mouth animation at 60fps.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 9: Business Model & Traction -->
-        <div class="slide slide-content" data-slide="9">
-            <h2 class="slide-header">Business Model & Traction</h2>
-            <p class="slide-subtitle">Proven Execution, Clear Path to Revenue</p>
-            <div class="content-grid">
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">EVE Revenue</h3>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>Consumer: Freemium → $4.99/mo Pro</li>
-                        <li>Enterprise: $29/seat/mo (pilots active)</li>
-                        <li>Developer API: Revenue share marketplace</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-5 rounded-2xl">
-                    <h3 class="font-semibold text-white mb-3">Companion Revenue</h3>
-                    <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
-                        <li>Base: Free (core relationship)</li>
-                        <li>Premium: $7.99/mo (voice, memory depth)</li>
-                        <li>Cosmetic: Accessories, environments</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="glass-card p-5 rounded-2xl" style="width: 100%; margin-top: 20px;">
-                <h3 class="font-semibold text-white mb-3">Technical Moats</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px; text-align: center;">
-                    <div><p style="color: var(--accent); font-weight: 700;">Phone-First Dev</p><p class="text-slate-300 text-sm">Built entirely on Android via Termux</p></div>
-                    <div><p style="color: var(--accent-green); font-weight: 700;">NPU Pipeline</p><p class="text-slate-300 text-sm">MediaPipe GenAI on MediaTek NPU</p></div>
-                    <div><p style="color: var(--accent-purple); font-weight: 700;">Rhubarb Port</p><p class="text-slate-300 text-sm">First native Android lip-sync</p></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: The Ask -->
-        <div class="slide slide-hero" data-slide="10">
-            <div class="hero-content" style="text-align: center;">
-                <h1>The Ask</h1>
-                <p style="font-size: 1.5rem; margin-bottom: 30px;">$2M Seed for 18-Month Runway</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; max-width: 800px; margin: 0 auto; text-align: left;">
-                    <div class="glass-card p-5 rounded-2xl">
-                        <p style="color: var(--accent); font-weight: 700;">EVE Development</p>
-                        <ul style="padding-left: 20px; color: var(--text-muted); margin-top: 10px; line-height: 2; font-size: 0.9rem;">
-                            <li>NPU pipeline optimization</li>
-                            <li>Enterprise pilot closure</li>
-                            <li>Play Store launch</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card p-5 rounded-2xl">
-                        <p style="color: var(--accent-green); font-weight: 700;">Companion Launch</p>
-                        <ul style="padding-left: 20px; color: var(--text-muted); margin-top: 10px; line-height: 2; font-size: 0.9rem;">
-                            <li>Rhubarb + voice integration</li>
-                            <li>Wellness framework</li>
-                            <li>Beta community</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card p-5 rounded-2xl">
-                        <p style="color: var(--accent-purple); font-weight: 700;">Infrastructure</p>
-                        <ul style="padding-left: 20px; color: var(--text-muted); margin-top: 10px; line-height: 2; font-size: 0.9rem;">
-                            <li>CI/CD & model hosting</li>
-                            <li>Security audits</li>
-                            <li>Team: 2 senior engineers</li>
-                        </ul>
-                    </div>
-                </div>
-                <p style="margin-top: 40px; color: var(--text-muted);">Built by a solo founder on Android. No VC crutches. Ready to scale.</p>
-                <div class="tagline" style="margin-top: 20px; font-size: 1.2rem;">AETHERIA PROJECT — Autonomy & Companionship</div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Bottom Controls Footer -->
-    <footer class="w-full px-6 py-4 flex justify-between items-center border-t border-slate-800/80 bg-slate-950/50">
-        <button onclick="prevSlide()" class="px-4 py-2 text-xs font-semibold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-2">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Previous</span>
-        </button>
-        <div class="flex space-x-1.5" id="dotIndicators"></div>
-        <button onclick="nextSlide()" class="px-4 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition flex items-center space-x-2 shadow-lg shadow-indigo-600/30">
-            <span>Next</span>
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </footer>
-
-    <!-- Narration Indicator -->
-    <div class="narration-indicator" id="narrationIndicator" style="display: none;">
-        <span class="narration-dot"></span>
-        <span id="narrationText">Narrating...</span>
-    </div>
-
-    <!-- Presentation Logic Script -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheria Project - Investor Deck</title>
     <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
+        html {
+            scroll-behavior: smooth;
+            scroll-duration: 2s;
         }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        
+        html, body {
+            scroll-behavior: smooth !important;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        @keyframes slideInSoft {
-            from { opacity: 0; transform: translateX(-16px); }
-            to { opacity: 1; transform: translateX(0); }
+
+        :root {
+            --primary: #2d4a8c;
+            --primary-light: #4a6fbd;
+            --primary-dark: #1a2d5f;
+            --accent: #00d4ff;
+            --accent-warm: #ff6b35;
+            --accent-green: #00c896;
+            --accent-purple: #b84ef9;
+            --bg-dark: #0f1419;
+            --bg-darker: #0a0d12;
+            --text-light: #e8e9eb;
+            --text-muted: #8a8f99;
+            --border: #2a3548;
         }
-        @keyframes scaleInSoft {
-            from { opacity: 0; transform: scale(0.96); }
-            to { opacity: 1; transform: scale(1); }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f2e 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.7; }
-        }
-        @keyframes slideInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInUpKey {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes slideUpBar {
-            from { height: 0; }
-            to { height: 100%; }
-        }
-        .slide {
-            position: absolute;
-            inset: 0;
+
+        .presentation {
+            width: 100%;
             display: flex;
             flex-direction: column;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f2e 100%);
+        }
+
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f2e 100%);
+        }
+
+        /* Hero Slide */
+        .slide-hero {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-darker) 50%, #2a1a4a 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-purple) 50%, var(--accent-warm) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInDown 1s ease-out;
+            letter-spacing: -2px;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            animation: slideInUp 1s ease-out 0.2s both;
+            line-height: 1.6;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 600;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        /* Content Slides */
+        .slide-content {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .slide-header {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            animation: slideInLeft 0.8s ease-out 0.1s both;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .content-card {
+            background: rgba(45, 74, 140, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease-out;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-purple) 100%);
+        }
+
+        .content-card:hover {
+            border-color: var(--accent);
+            background: rgba(45, 74, 140, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .content-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* Charts */
+        .chart-container {
+            background: rgba(45, 74, 140, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .metric-box {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bar Chart */
+        .bar-chart {
+            display: flex;
             align-items: flex-end;
             justify-content: space-around;
+            height: 300px;
             margin: 40px 0;
             gap: 15px;
-            padding: 40px 30px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
         }
-        .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 1;
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-purple) 100%);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 20px;
+            animation: slideUp 0.8s ease-out;
         }
-        .slide .animate-in {
-            opacity: 0;
-            animation-fill-mode: forwards;
+
+        .bar:hover {
+            transform: scaleY(1.05);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
-        .slide.active .animate-in {
-            animation-play-state: running;
+
+        .bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
-        .delay-1 { animation-delay: 0.15s; }
-        .delay-2 { animation-delay: 0.35s; }
-        .delay-3 { animation-delay: 0.55s; }
-        .delay-4 { animation-delay: 0.75s; }
-        .delay-5 { animation-delay: 0.95s; }
-        .delay-6 { animation-delay: 1.15s; }
-        .delay-7 { animation-delay: 1.35s; }
-        .bar { flex: 1; }
-        .bar:hover { transform: scaleY(1.05); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
-        .bar-label { position: absolute; bottom: -30px; left: 0; right: 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
-        .bar-value { position: absolute; top: -25px; left: 0; right: 0; text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
-        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 30px 0; }
-        .comparison-table th { background: rgba(0, 212, 255, 0.1); border: 1px solid var(--border); padding: 15px; text-align: left; font-weight: 600; color: var(--accent); }
-        .comparison-table td { border: 1px solid var(--border); padding: 15px; color: var(--text-light); }
-        .comparison-table tr:hover { background: rgba(45, 74, 140, 0.1); }
-        .check { color: var(--accent-green); font-weight: 700; }
-        .cross { color: var(--accent-warm); font-weight: 700; }
-        .line-chart { position: relative; height: 250px; margin: 40px 0; background: rgba(45, 74, 140, 0.05); border-radius: 8px; padding: 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
-        .line-point { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; position: relative; }
-        .line-dot { width: 12px; height: 12px; background: var(--accent); border-radius: 50%; margin-bottom: 10px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); animation: pulse 2s ease-in-out infinite; }
-        .line-bar { width: 100%; background: linear-gradient(180deg, var(--accent) 0%, var(--accent-purple) 100%); border-radius: 4px 4px 0 0; transition: all 0.3s ease; position: relative; }
-        .line-label { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; white-space: nowrap; }
-        .controls { display: none; }
-        .playback-controls { display: none; }
-        button { display: none; }
-        .progress-bar { display: none; }
-        .progress-fill { display: none; }
-        .slide-counter { display: none; }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .comparison-table th {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--border);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .comparison-table td {
+            border: 1px solid var(--border);
+            padding: 15px;
+            color: var(--text-light);
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(45, 74, 140, 0.1);
+        }
+
+        .check {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .cross {
+            color: var(--accent-warm);
+            font-weight: 700;
+        }
+
+        /* Revenue Projection Chart */
+        .line-chart {
+            position: relative;
+            height: 250px;
+            margin: 40px 0;
+            background: rgba(45, 74, 140, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .line-point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .line-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .line-bar {
+            width: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-purple) 100%);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .line-label {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        /* Controls - Hidden */
+        .controls {
+            display: none;
+        }
+
+        .playback-controls {
+            display: none;
+        }
+
+        button {
+            display: none;
+        }
+
+        .progress-bar {
+            display: none;
+        }
+
+        .progress-fill {
+            display: none;
+        }
+
+        .slide-counter {
+            display: none;
+        }
+
+        /* Narration indicator */
         .narration-indicator {
             position: fixed;
             top: 20px;
@@ -440,6 +387,7 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
+
         .narration-dot {
             width: 8px;
             height: 8px;
@@ -447,189 +395,944 @@
             border-radius: 50%;
             animation: pulse 1s ease-in-out infinite;
         }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                height: 0;
+            }
+            to {
+                height: 100%;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            .content-grid { grid-template-columns: 1fr; }
-            .metric-grid { grid-template-columns: repeat(2, 1fr); }
-            .slide { margin: 20px 0; }
-            h2 { font-size: 2rem; }
-            .hero-content h1 { font-size: 3rem; }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .slide {
+                padding: 40px 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .slide-header {
+                font-size: 2rem;
+            }
         }
-        @media (max-width: 768px) {
-            .slide { padding: 20px; }
-            .content-card { padding: 20px; }
-            .chart-container { padding: 20px; }
-        }
+
         @media (max-width: 640px) {
-            .metric-grid { grid-template-columns: 1fr; }
-            .controls { flex-direction: column; gap: 10px; }
-            .slide { padding: 30px 20px; }
-            .hero-content h1 { font-size: 2rem; }
-            .hero-content p { font-size: 1rem; }
-            .slide-header { font-size: 1.5rem; }
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .slide {
+                padding: 30px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .slide-header {
+                font-size: 1.5rem;
+            }
         }
     </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Hero -->
+        <div class="slide slide-hero active">
+            <div class="hero-content">
+                <h1>AETHERIA PROJECT</h1>
+                <p>Two AI-Powered Mobile Ecosystems<br>Built for Autonomy & Companionship</p>
+                <div class="tagline">$180B Market Opportunity</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Opportunity -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">The Market Opportunity</h2>
+            <p class="slide-subtitle">A $180B+ Untapped Market in Mobile AI</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>EVE COMPANION</h3>
+                    <p><strong>Autonomous AI Assistant</strong><br>
+                    Complete phone control + autonomous execution. Enterprise mobile automation for sales, support, field ops.</p>
+                    <p style="margin-top: 15px; font-size: 1.1rem; color: var(--accent);">
+                        <strong>TAM: $180B+</strong>
+                    </p>
+                </div>
+                <div class="content-card">
+                    <h3>FOREVER COMPANION</h3>
+                    <p><strong>Ethical AI Pet Companion</strong><br>
+                    Emotionally-aware, persistent relationship. Wellness-first + guilt-free engagement.</p>
+                    <p style="margin-top: 15px; font-size: 1.1rem; color: var(--accent-green);">
+                        <strong>TAM: $62B+</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-value">$242B</div>
+                    <div class="metric-label">Combined TAM</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">2.8B</div>
+                    <div class="metric-label">Mobile Users</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">25%</div>
+                    <div class="metric-label">YoY Growth</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$4.2T</div>
+                    <div class="metric-label">Mobile Economy</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: EVE - The Problem -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">EVE: The Problem</h2>
+            <p class="slide-subtitle">Mobile Automation is Fragmented & Powerless</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>❌ Current Limitations</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>iPhone Shortcuts: Janky, disconnected logic</li>
+                        <li>Android Automation: Outdated, unreliable</li>
+                        <li>Google Assistant/Siri: Can only suggest, not execute</li>
+                        <li>IFTTT/Zapier: Manual setup, no autonomy</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>💡 The Gap</h3>
+                    <p>No AI agent that can:</p>
+                    <ul style="padding-left: 20px; margin-top: 15px;">
+                        <li>Think independently</li>
+                        <li>Make autonomous decisions</li>
+                        <li>Execute across entire phone</li>
+                        <li>Learn from patterns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card" style="grid-column: 1 / -1;">
+                <h3>🎯 Three Revenue Segments</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div>
+                        <p style="color: var(--accent); font-weight: 600;">Consumer</p>
+                        <p>$15B TAM — Power users, developers, researchers</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--accent-green); font-weight: 600;">Enterprise</p>
+                        <p>$140B TAM — Sales, support, field ops automation</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--accent-purple); font-weight: 600;">Developer API</p>
+                        <p>$25B TAM — Third-party integrations & marketplace</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: EVE - Why It Wins -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">EVE: Unfair Advantages</h2>
+            <p class="slide-subtitle">Why Eve Dominates</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🚀 Autonomous Execution</h3>
+                    <p>Eve doesn't just suggest—it executes autonomously based on learned preferences. Competitors require confirmation for every action.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🔒 Privacy-First Architecture</h3>
+                    <p>Wake word detection runs 100% on-device. No voice data leaves your phone. Faster than Google, more private than Alexa.</p>
+                </div>
+                <div class="content-card">
+                    <h3>⚡ Hybrid AI Model</h3>
+                    <p>70% cheaper than pure cloud. Sub-200ms response time. Local tasks instant, complex reasoning delegated to cloud.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🎓 Context-Aware Intelligence</h3>
+                    <p>Understands app context, screen state, time of day, user patterns. No other AI knows your phone this deeply.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: EVE - Competitive Landscape -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">EVE vs. The Competition</h2>
+            <p class="slide-subtitle">Why Eve Dominates Every Category</p>
+            
+            <div class="chart-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Eve</th>
+                            <th>Google Assistant</th>
+                            <th>Siri</th>
+                            <th>ChatGPT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phone Control</strong></td>
+                            <td><span class="check">✓ Full</span></td>
+                            <td>Limited</td>
+                            <td>Limited</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Autonomous Execution</strong></td>
+                            <td><span class="check">✓ Yes</span></td>
+                            <td>Suggests only</td>
+                            <td>Suggests only</td>
+                            <td>Chat only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Offline Support</strong></td>
+                            <td><span class="check">✓ 90%</span></td>
+                            <td>Cloud required</td>
+                            <td>Cloud required</td>
+                            <td>Cloud required</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task Learning</strong></td>
+                            <td><span class="check">✓ Yes</span></td>
+                            <td>Static</td>
+                            <td>Static</td>
+                            <td>No memory</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enterprise Ready</strong></td>
+                            <td><span class="check">✓ Yes</span></td>
+                            <td>Consumer only</td>
+                            <td>Consumer only</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td>$9.99/mo</td>
+                            <td>Free (ads)</td>
+                            <td>Free</td>
+                            <td>$20/mo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 6: EVE - Revenue Model -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">EVE: Revenue Model</h2>
+            <p class="slide-subtitle">Three Revenue Streams. Exceptional Unit Economics.</p>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-value">$800</div>
+                    <div class="metric-label">Consumer LTV</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">320:1</div>
+                    <div class="metric-label">LTV:CAC Ratio</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$18K</div>
+                    <div class="metric-label">Enterprise LTV</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">3.6:1</div>
+                    <div class="metric-label">Enterprise LTV:CAC</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 style="margin-bottom: 20px; color: var(--accent);">Conservative 5-Year Revenue Projection</h3>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 15%; animation-delay: 0s;">
+                        <div class="bar-value">$2.65M</div>
+                        <div class="bar-label">Year 1</div>
+                    </div>
+                    <div class="bar" style="height: 35%; animation-delay: 0.1s;">
+                        <div class="bar-value">$10.5M</div>
+                        <div class="bar-label">Year 2</div>
+                    </div>
+                    <div class="bar" style="height: 60%; animation-delay: 0.2s;">
+                        <div class="bar-value">$28M</div>
+                        <div class="bar-label">Year 3</div>
+                    </div>
+                    <div class="bar" style="height: 80%; animation-delay: 0.3s;">
+                        <div class="bar-value">$60M</div>
+                        <div class="bar-label">Year 4</div>
+                    </div>
+                    <div class="bar" style="height: 100%; animation-delay: 0.4s;">
+                        <div class="bar-value">$117M</div>
+                        <div class="bar-label">Year 5</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 50px; color: var(--accent);">
+                    <strong>5-Year Total Revenue: $218M</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 7: FOREVER COMPANION - The Problem -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Forever Companion: The Gap</h2>
+            <p class="slide-subtitle">A $62B Market Desperate for Ethical AI</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>😔 The Crisis</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>1 in 5 adults report chronic loneliness</li>
+                        <li>Gen Z: 54% moderate-to-severe loneliness</li>
+                        <li>Therapy access: expensive & limited</li>
+                        <li>Existing companion apps: exploitative, shallow</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>❌ What's Broken</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>Gacha mechanics = addiction by design</li>
+                        <li>Chatbots = forget you every message</li>
+                        <li>Pet sims = no emotional depth</li>
+                        <li>No app respects your autonomy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: FOREVER COMPANION - Why It Wins -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Forever Companion: The Difference</h2>
+            <p class="slide-subtitle">Hybrid Positioning: Depth + Persistence + Ethics</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🧠 Hybrid AI Stack</h3>
+                    <p>On-device models for instant response. Cloud AI for depth. 70% cheaper than pure cloud alternatives.</p>
+                </div>
+                <div class="content-card">
+                    <h3>❤️ Relationship Persistence</h3>
+                    <p>15-entity database tracks emotional memory, evolution, and growth. Your bond accumulates, never resets.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🛡️ Ethical Monetization</h3>
+                    <p>No gacha, no FOMO mechanics. Premium features based on emotional value, not manipulation.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🎯 Context-Aware Moods</h3>
+                    <p>8 emotional states adapt to your app context. Knows when you're working, gaming, or need rest.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: FOREVER COMPANION - Competitive Landscape -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Forever Companion vs. Competition</h2>
+            <p class="slide-subtitle">The First Ethical Companion App</p>
+            
+            <div class="chart-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Forever Companion</th>
+                            <th>Character.AI</th>
+                            <th>Replika</th>
+                            <th>ChatGPT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>On-Device AI</strong></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Persistent Relationship</strong></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Offline Support</strong></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethical Design</strong></td>
+                            <td><span class="check">✓</span></td>
+                            <td>⚠️ Some</td>
+                            <td>⚠️ Some</td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3D Avatar</strong></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td>⚠️ Basic</td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ARPU Potential</strong></td>
+                            <td><strong>$8-15/yr</strong></td>
+                            <td>$2-4/yr</td>
+                            <td>$3-6/yr</td>
+                            <td>$20-30/yr</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 10: FOREVER COMPANION - Revenue Model -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Forever Companion: Unit Economics</h2>
+            <p class="slide-subtitle">Retention-Driven Growth with Exceptional ARPU</p>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-value">$3.84</div>
+                    <div class="metric-label">Blended ARPU</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">$11.52</div>
+                    <div class="metric-label">LTV (3-year)</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">11.5:1</div>
+                    <div class="metric-label">LTV:CAC Ratio</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">4%</div>
+                    <div class="metric-label">Conversion Rate</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 style="margin-bottom: 20px; color: var(--accent);">Conservative 5-Year Revenue Projection</h3>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 10%; animation-delay: 0s;">
+                        <div class="bar-value">$1.05M</div>
+                        <div class="bar-label">Year 1</div>
+                    </div>
+                    <div class="bar" style="height: 30%; animation-delay: 0.1s;">
+                        <div class="bar-value">$19.2M</div>
+                        <div class="bar-label">Year 2</div>
+                    </div>
+                    <div class="bar" style="height: 55%; animation-delay: 0.2s;">
+                        <div class="bar-value">$63M</div>
+                        <div class="bar-label">Year 3</div>
+                    </div>
+                    <div class="bar" style="height: 80%; animation-delay: 0.3s;">
+                        <div class="bar-value">$135M</div>
+                        <div class="bar-label">Year 4</div>
+                    </div>
+                    <div class="bar" style="height: 100%; animation-delay: 0.4s;">
+                        <div class="bar-value">$216M</div>
+                        <div class="bar-label">Year 5</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 50px; color: var(--accent-green);">
+                    <strong>5-Year Total Revenue: $434M</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 11: The Ask -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">The Funding Ask</h2>
+            <p class="slide-subtitle">Fuel Growth to Series B in 18 Months</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>💰 EVE COMPANION</h3>
+                    <p><strong>$5M Seed</strong></p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Product development, sales ops, launch marketing</p>
+                    <p style="margin-top: 15px; color: var(--accent); font-weight: 600;">Target: 50K users + 30 enterprise customers</p>
+                </div>
+                <div class="content-card">
+                    <h3>💚 FOREVER COMPANION</h3>
+                    <p><strong>$8M Seed</strong></p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Product + AI/ML, UA campaigns, influencer partnerships</p>
+                    <p style="margin-top: 15px; color: var(--accent-green); font-weight: 600;">Target: 15M users + 600K paying</p>
+                </div>
+            </div>
+
+            <div class="content-card" style="grid-column: 1 / -1;">
+                <h3>🎯 18-Month Milestones</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 10px;">EVE</p>
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>M3: 5K paying users, 3 pilot enterprises</li>
+                            <li>M9: 20K paying users, 10 enterprises</li>
+                            <li>M18: 50K users, 30 enterprises → Series B</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 10px;">FOREVER</p>
+                        <ul style="padding-left: 20px; font-size: 0.9rem;">
+                            <li>M3: 500K users, 20K paying</li>
+                            <li>M9: 5M users, 200K paying</li>
+                            <li>M18: 15M users, 600K paying → Series B</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Why Now? -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Why This Company. Why Now.</h2>
+            <p class="slide-subtitle">Market Timing, Technical Moat, Execution</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>📈 Market Acceleration</h3>
+                    <p>AI assistant market growing 35% YoY. On-device inference now viable. Enterprise mobile automation becoming standard.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🛡️ Technical Moat</h3>
+                    <p>Proprietary on-device models. Hybrid cloud architecture. Context-aware systems. Hard to replicate in months.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🎯 Founder-Market Fit</h3>
+                    <p>Solo founder with 5+ years shipped Android expertise. Has built and shipped production systems. Knows exactly what to build.</p>
+                </div>
+                <div class="content-card">
+                    <h3>💪 Dual Platform Advantage</h3>
+                    <p>Two distinct products, same core technology stack. Learned insights from one accelerate the other.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Exit Scenarios -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Path to Exit</h2>
+            <p class="slide-subtitle">Strategic Acquisition, IPO, or $1B+ Private Valuation</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🎯 Strategic Acquisition</h3>
+                    <p><strong>Most Likely</strong></p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">
+                        Acquirer: Google, Microsoft, Zapier, Samsung
+                    </p>
+                    <p style="margin-top: 10px; color: var(--accent); font-weight: 600;">
+                        Year 3: $280M–$420M<br>
+                        Year 5: $1.2B–$1.8B
+                    </p>
+                </div>
+                <div class="content-card">
+                    <h3>📈 IPO Path</h3>
+                    <p><strong>Optimistic Case</strong></p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">
+                        Triggers: $100M+ revenue + clear profitability
+                    </p>
+                    <p style="margin-top: 10px; color: var(--accent-purple); font-weight: 600;">
+                        Year 5: $3B–$4.5B valuation<br>
+                        (8-12x revenue multiple)
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-card" style="grid-column: 1 / -1;">
+                <h3>💎 Combined Opportunity</h3>
+                <p style="font-size: 1.1rem; color: var(--accent-green);">
+                    <strong>By Year 5:</strong> EVE ($117M) + Forever Companion ($216M) = <strong>$333M combined revenue</strong>
+                </p>
+                <p style="margin-top: 15px; color: var(--text-muted);">
+                    Conservative 8x revenue multiple = <strong>$2.6B valuation</strong><br>
+                    Aggressive 12x multiple = <strong>$4B+ valuation</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Risk Mitigations -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Risks & Mitigations</h2>
+            <p class="slide-subtitle">Prepared for Every Scenario</p>
+            
+            <div class="chart-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Probability</th>
+                            <th>Impact</th>
+                            <th>Mitigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Big Tech Entry</strong></td>
+                            <td>Medium</td>
+                            <td>Very High</td>
+                            <td>First-mover advantage, brand loyalty, enterprise traction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Privacy/Security Concerns</strong></td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td>Third-party audits, transparency, on-device first</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regulatory (AI Autonomy)</strong></td>
+                            <td>Low</td>
+                            <td>Very High</td>
+                            <td>Proactive compliance, audit trails, user consent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enterprise Sales Slower</strong></td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td>Pivot to consumer, API licensing, partnerships</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LLM Provider Dependency</strong></td>
+                            <td>Medium</td>
+                            <td>Low</td>
+                            <td>Fine-tune own models, diversify providers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 15: The Vision -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">The Vision</h2>
+            <p class="slide-subtitle">Aetheria: The Operating System for Intelligence</p>
+            
+            <div class="content-card" style="grid-column: 1 / -1; text-align: center; padding: 60px 40px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 30px;">
+                    In 5 years, 500M people will have an AI agent—not in the cloud, but in their pocket—making decisions autonomously, building relationships authentically, and augmenting every moment of their digital lives.
+                </h3>
+                <p style="font-size: 1.1rem; margin: 20px 0;">
+                    <strong>Eve Companion</strong> powers productivity. <strong>Forever Companion</strong> nurtures wellbeing.
+                </p>
+                <p style="color: var(--accent-green); font-weight: 600; font-size: 1rem;">
+                    Together, they own the future of personal AI.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 16: Close -->
+        <div class="slide slide-hero">
+            <div class="hero-content">
+                <h1>Let's Build the Future</h1>
+                <p>Two AI-Powered Ecosystems.<br>One Transformational Vision.<br>Exceptional Returns.</p>
+                <div class="tagline" style="margin-top: 40px;">$13M to change mobile forever</div>
+            </div>
+        </div>
+
+        <!-- Slide 17: MusicScanAI -->
+        <div class="slide slide-content">
+            <h2 class="slide-header">Bonus: MusicScanAI</h2>
+            <p class="slide-subtitle">Additional Investment Opportunity</p>
+            
+            <div class="chart-container" style="height: 600px; width: 100%; border: none; padding: 0; background: transparent;">
+                <iframe 
+                    src="https://tonygrischke-art.github.io/MusicScanAI-Pitch/"
+                    style="width: 100%; height: 100%; border: none; border-radius: 16px; background: #0a0d12;"
+                    allow="fullscreen"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="playback-controls">
+            <button onclick="toggleAutoPlay()" id="playBtn">▶ Auto Play</button>
+            <div class="progress-bar" onclick="seekSlide(event)">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="slide-counter"><span id="current">1</span> / <span id="total">17</span></span>
+        </div>
+    </div>
+
+    <div class="narration-indicator">
+        <div class="narration-dot"></div>
+        <span id="narrationStatus">Narrating...</span>
+    </div>
+
     <script>
-        let currentSlide = 1;
-        const totalSlides = 10;
-        let autoPlayTimer = null;
-        let isAutoPlaying = false;
-        let slideStartTime = 0;
+        const slides = document.querySelectorAll('.slide');
+        let currentSlideIndex = 0;
+        let isNarrating = false;
+        let narratorQueue = [];
 
-        const slideDurations = {
-            1: 12000,  // Hero - let the brand land
-            2: 14000,  // Market - dual TAMs + metrics
-            3: 13000,  // EVE Problem - pain points + revenue segments
-            4: 13000,  // EVE Unfair Advantages
-            5: 14000,  // EVE Competitive Landscape - table
-            6: 13000,  // EVE Solution - tech depth
-            7: 13000,  // Companion Problem - market gap
-            8: 13000,  // Companion Solution - features
-            9: 14000,  // Business Model - revenue + moats
-            10: 18000  // The Ask - let it breathe
-        };
+        // Professional investor pitch narration - charismatic & exciting
+        const narrations = [
+            // Slide 1: Hero
+            "Welcome. What you're about to see is two revolutionary AI-powered mobile ecosystems that are about to reshape how billions of people interact with their phones every single day. This is the Aetheria Project. And we're capturing a two hundred and forty-two billion dollar market opportunity.",
+            
+            // Slide 2: Market Opportunity
+            "Let me paint the picture. The market is absolutely massive. Eve Companion is going after an one hundred and eighty billion dollar market in autonomous mobile automation. Meanwhile, Forever Companion is capturing a sixty-two billion dollar companion AI market. That's a combined two hundred and forty-two billion dollar total addressable market. We're talking about two point eight billion smartphone users globally. Growing at twenty-five percent year over year. Sitting in a four point two trillion dollar mobile economy. The timing? Perfect. The opportunity? Generational.",
+            
+            // Slide 3: Eve - The Problem
+            "Here's the problem nobody's solving. Your phone has become your digital life. But you're still controlling it like it's nineteen ninety-five. iPhone Shortcuts? Janky and disconnected. Android automation apps? Outdated and unreliable. Google Assistant? Siri? They can only suggest actions, never execute them independently. IFTTT? Zapier? They require manual setup and have no real intelligence. There is no AI agent on Earth that can think, decide, and execute autonomously across your entire phone. Until now. We're targeting three explosive revenue segments. Consumers at fifteen billion. Enterprise mobile automation at one hundred and forty billion. And a developer API marketplace at twenty-five billion. This is the gap everyone's missed.",
+            
+            // Slide 4: Eve - Unfair Advantages
+            "So why does Eve win? Four massive advantages. First: Autonomous Execution. Eve doesn't ask permission. It learns your preferences, makes decisions, and executes them. Meanwhile competitors are stuck in confirmation dialogs. Second: Privacy-First Architecture. Your wake word detection runs one hundred percent on-device. Zero data leaves your phone. It's faster than Google, more private than Alexa. Third: Our Hybrid AI Model. We're seventy percent cheaper than cloud-only solutions. Sub-two-hundred millisecond response times. And we work offline. Fourth: Context-Aware Intelligence. Eve understands your app context, your screen state, the time of day, your patterns. No other AI on the planet knows your phone like Eve does.",
+            
+            // Slide 5: Eve vs Competition
+            "Let's be crystal clear about the competitive landscape. Eve has full system control. Google Assistant? Limited. Siri? Limited. ChatGPT? None. Eve has autonomous execution. Everyone else just suggests. Eve works offline ninety percent of the time. Competitors require cloud. Eve learns your tasks. Competitors are static. Eve is enterprise-ready. They're consumer-only. Eve is nine ninety-nine a month. With unit economics that are absolutely insane.",
+            
+            // Slide 6: Eve Revenue Model
+            "And the money? Exceptional. Consumer lifetime value is eight hundred dollars. That's a three hundred twenty to one lifetime value to customer acquisition cost ratio. For context, anything above three to one is venture-scale. We're at three hundred twenty to one. Enterprise lifetime value is eighteen thousand dollars. That's a three point six to one ratio. Look at these projections. Year one: two point six-five million. Year two: ten point five million. Year three: twenty-eight million. Year four: sixty million. Year five: one hundred seventeen million. Five-year cumulative revenue of two hundred eighteen million dollars. And that's our conservative scenario.",
+            
+            // Slide 7: Forever Companion - The Crisis
+            "Now let's talk about the loneliness crisis. One in five adults report chronic loneliness. In Generation Z, it's fifty-four percent experiencing moderate to severe loneliness. Therapy? Limited access, expensive, and takes months to get an appointment. What about existing companion apps? They're exploitative. Gacha mechanics designed to drain wallets. Aggressive notifications. FOMO manipulation. No app respects user autonomy. This is a sixty-two billion dollar market desperate for an ethical alternative.",
+            
+            // Slide 8: Forever Companion - The Breakthrough
+            "Forever Companion is different. Fundamentally different. First: Hybrid AI Stack. On-device models for instant responses. Cloud AI when you need depth. Seventy percent cheaper than pure cloud. Second: Persistent Relationships. We have a fifteen-entity database system that tracks emotional memory, evolution, and growth. Your relationship accumulates. It never resets. Third: Ethical Monetization. No gacha. No FOMO mechanics. Premium features based on emotional value, not addiction. This is revolutionary in a market built on exploitation. Fourth: Context-Aware Moods. Eight emotional states that adapt to what you're doing. We know when you're working, gaming, or need to rest.",
+            
+            // Slide 9: Forever Companion vs Competition
+            "Here's the competitive landscape. Forever Companion is the only one with on-device AI. The only one with offline support. The only one designed ethically from the ground up. Character AI? Cloud-only and stateless. Replika? Cloud-only with dependency risks. ChatGPT? No persistence, no relationship building. We're not competing in their categories. We're creating a new category. And we're going to own it.",
+            
+            // Slide 10: Forever Companion Revenue Model
+            "The unit economics are beautiful. Blended ARPU is three dollars and eighty-four cents per year. That's an eleven point five to one lifetime value to customer acquisition cost ratio. Year one: one point zero-five million. Year two: nineteen point two million. Year three: sixty-three million. Year four: one hundred thirty-five million. Year five: two hundred sixteen million. Five-year cumulative revenue of four hundred thirty-four million dollars.",
+            
+            // Slide 11: The Ask
+            "Here's what we need. Eve Companion: five million dollars. Product development. Enterprise sales operations. Launch marketing. Target: fifty thousand paid users and thirty enterprise customers in eighteen months. Forever Companion: eight million dollars. AI infrastructure. User acquisition. Influencer partnerships. Target: fifteen million users and six hundred thousand paying subscribers in eighteen months. Combined: thirteen million dollars to fundamentally change how billions of people use their phones.",
+            
+            // Slide 12: Why This. Why Now.
+            "Why this company? Why now? The AI assistant market is growing thirty-five percent year over year. On-device inference is finally viable. Enterprise mobile automation is becoming standard practice. We have a technical moat. Proprietary on-device models. Hybrid cloud architecture. Context-aware systems that take months to replicate. We have founder-market fit. Five plus years of shipped Android expertise. We've already built and shipped production systems. And we have a dual-platform advantage. Two distinct products. Same core technology stack. Learnings from one accelerate the other. This is not theoretical. This is real.",
+            
+            // Slide 13: Exit Scenarios
+            "Let's talk about what this is worth. Strategic acquisition is most likely. Google wants this. Microsoft wants this. Zapier wants this. Samsung wants this. Year three: two hundred eighty to four hundred twenty million valuation. Year five: one point two to one point eight billion. In an optimistic IPO scenario at hundred million plus revenue: three to four point five billion valuation. But here's what's really exciting. Eve at one hundred seventeen million. Forever Companion at two hundred sixteen million. That's three hundred thirty-three million in combined year five revenue. Conservative eight times multiple? Two point six billion valuation. Aggressive twelve times multiple? Four billion. This is a multi-billion dollar outcome.",
+            
+            // Slide 14: Risks & Mitigations
+            "We've thought through every risk. Big tech entry? We have first-mover advantage, brand loyalty, and enterprise traction they can't replicate fast enough. Privacy concerns? Third-party security audits and radical transparency. Regulatory hurdles? Proactive compliance and audit trails. Enterprise sales velocity? We pivot to consumer and API licensing. LLM provider dependency? We diversify, fine-tune our own models, and have fallbacks. We're not naive. We're prepared.",
+            
+            // Slide 15: The Vision
+            "In five years, five hundred million people will have an AI agent. Not in the cloud. In their pocket. Making decisions autonomously. Building relationships authentically. Augmenting every single moment of their digital lives. Eve Companion powers productivity. Forever Companion nurtures wellbeing. Together, they own the future of personal artificial intelligence.",
+            
+            // Slide 16: Close
+            "This is our moment. Two AI-powered ecosystems. One transformational vision. Exceptional returns. Thirteen million dollars to change mobile forever. Let's build the future.",
+            
+            // Slide 17: MusicScanAI
+            "Thank you for watching the Aetheria Project. This is just the beginning. If you want to explore additional opportunities in our portfolio, take a look at MusicScanAI next."
+        ];
 
-        const slideEnterAnimations = {
-            1: 'fadeInUp',
-            2: 'fadeInUp',
-            3: 'slideInSoft',
-            4: 'fadeInUp',
-            5: 'scaleInSoft',
-            6: 'fadeInUp',
-            7: 'slideInSoft',
-            8: 'fadeInUp',
-            9: 'scaleInSoft',
-            10: 'fadeInUp'
-        };
-
-        function updateSlide(n, direction = 'forward') {
-            if (n > totalSlides) currentSlide = 1;
-            else if (n < 1) currentSlide = totalSlides;
-            else currentSlide = n;
-
-            const slides = document.querySelectorAll('.slide');
-            slides.forEach(s => s.classList.remove('active'));
-            const enteringSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
-            if (enteringSlide) {
-                enteringSlide.classList.add('active');
-                triggerSlideAnimations(enteringSlide);
-            }
-
-            document.getElementById('slideIndicator').innerText = `${currentSlide} / ${totalSlides}`;
-            updateDots();
-            slideStartTime = Date.now();
-            scheduleNextSlide();
-        }
-
-        function triggerSlideAnimations(slide) {
-            const animatedElements = slide.querySelectorAll('.animate-in');
-            animatedElements.forEach(el => {
-                el.style.animationPlayState = 'paused';
-                el.style.opacity = '0';
-                el.style.animationName = 'none';
-                el.offsetHeight;
-                el.style.animationName = '';
-                el.style.animationPlayState = 'running';
-                el.style.opacity = '';
+        function speakText(text) {
+            return new Promise((resolve) => {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+                
+                // Give it a moment to cancel
+                setTimeout(() => {
+                    try {
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        utterance.rate = 0.85;
+                        utterance.pitch = 1.0;
+                        utterance.volume = 1.0;
+                        
+                        // Get available voices
+                        const voices = window.speechSynthesis.getVoices();
+                        if (voices.length > 0) {
+                            utterance.voice = voices[0];
+                        }
+                        
+                        utterance.onend = () => {
+                            resolve();
+                        };
+                        
+                        // Suppress error events entirely
+                        utterance.onerror = () => {
+                            resolve();
+                        };
+                        
+                        window.speechSynthesis.speak(utterance);
+                    } catch (e) {
+                        // Silently continue on any error
+                        resolve();
+                    }
+                }, 50);
             });
         }
 
-        function nextSlide() { updateSlide(currentSlide + 1, 'forward'); }
-        function prevSlide() { updateSlide(currentSlide - 1, 'backward'); }
+        function scrollToSlide(slideIndex) {
+            const slide = slides[slideIndex];
+            const targetPosition = slide.offsetTop;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            const duration = 8000; // 8 seconds to scroll to slide
+            let start = null;
 
-        function setupDots() {
-            const container = document.getElementById('dotIndicators');
-            for (let i = 1; i <= totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${i === currentSlide ? 'bg-indigo-500 w-6' : 'bg-slate-700 hover:bg-slate-600'}`;
-                dot.setAttribute('aria-label', `Slide ${i}`);
-                dot.onclick = () => {
-                    const dir = i > currentSlide ? 'forward' : 'backward';
-                    updateSlide(i, dir);
-                };
-                container.appendChild(dot);
+            function smoothScroll(currentTime) {
+                if (start === null) start = currentTime;
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease-out cubic for smooth deceleration
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                window.scrollTo(0, startPosition + (distance * easeProgress));
+                
+                if (progress < 1) {
+                    requestAnimationFrame(smoothScroll);
+                }
             }
+            
+            requestAnimationFrame(smoothScroll);
         }
 
-        function updateDots() {
-            const container = document.getElementById('dotIndicators');
-            const dots = container.querySelectorAll('button');
-            dots.forEach((dot, i) => {
-                const isActive = i + 1 === currentSlide;
-                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${isActive ? 'bg-indigo-500 w-6' : 'bg-slate-700 hover:bg-slate-600'}`;
-            });
-        }
-
-        function scheduleNextSlide() {
-            if (!isAutoPlaying) return;
-            if (autoPlayTimer) clearTimeout(autoPlayTimer);
-            const duration = slideDurations[currentSlide] || 10000;
-            const jitter = (Math.random() - 0.5) * 800;
-            autoPlayTimer = setTimeout(() => {
-                nextSlide();
-            }, Math.max(7000, duration + jitter));
-        }
-
-        function toggleAutoPlay() {
-            const btnText = document.getElementById('playText');
-            const playIcon = document.getElementById('playIcon');
-            const narrationIndicator = document.getElementById('narrationIndicator');
-            if (isAutoPlaying) {
-                clearTimeout(autoPlayTimer);
-                autoPlayTimer = null;
-                isAutoPlaying = false;
-                btnText.innerText = 'Auto-Run';
-                playIcon.className = 'fa-solid fa-play text-indigo-400';
-                narrationIndicator.style.display = 'none';
+        async function presentSlide(slideIndex) {
+            if (slideIndex >= slides.length) return;
+            
+            currentSlideIndex = slideIndex;
+            scrollToSlide(slideIndex);
+            
+            // Update narration status
+            document.getElementById('narrationStatus').textContent = `Slide ${slideIndex + 1}/${slides.length}`;
+            
+            // Speak narration
+            if (narrations[slideIndex]) {
+                isNarrating = true;
+                await speakText(narrations[slideIndex]);
+                isNarrating = false;
+            }
+            
+            // 20 seconds on page for reading + absorbing content
+            await new Promise(resolve => setTimeout(resolve, 20000));
+            
+            if (slideIndex + 1 < slides.length) {
+                presentSlide(slideIndex + 1);
             } else {
-                isAutoPlaying = true;
-                btnText.innerText = 'Pause';
-                playIcon.className = 'fa-solid fa-pause text-amber-400';
-                narrationIndicator.style.display = 'flex';
-                scheduleNextSlide();
+                document.getElementById('narrationStatus').textContent = 'Presentation Complete';
             }
         }
 
+        // Start presentation on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                presentSlide(0);
+            }, 1000);
+        });
+
+        // Allow replay with spacebar
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'Space') {
+            if (e.key === ' ') {
                 e.preventDefault();
-                if (isAutoPlaying) toggleAutoPlay();
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                if (isAutoPlaying) toggleAutoPlay();
-                prevSlide();
+                window.speechSynthesis.cancel();
+                presentSlide(0);
             }
         });
 
-        let touchStartX = 0, touchStartTime = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartTime = Date.now();
-        }, { passive: true });
-        document.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].screenX;
-            const touchEndTime = Date.now();
-            const dx = touchStartX - touchEndX;
-            const dt = touchEndTime - touchStartTime;
-            if (dt < 300 && Math.abs(dx) > 50) {
-                if (isAutoPlaying) toggleAutoPlay();
-                if (dx > 0) nextSlide();
-                else prevSlide();
-            }
-        }, { passive: true });
-
-        window.onload = () => {
-            setupDots();
-            triggerSlideAnimations(document.querySelector('[data-slide="1"]'));
-        };
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden && isAutoPlaying) {
-                clearTimeout(autoPlayTimer);
-            } else if (!document.hidden && isAutoPlaying) {
-                const elapsed = Date.now() - slideStartTime;
-                const remaining = Math.max(1000, (slideDurations[currentSlide] || 10000) - elapsed);
-                autoPlayTimer = setTimeout(() => nextSlide(), remaining);
+        // Allow clicking to advance manually
+        document.addEventListener('click', () => {
+            if (!isNarrating) {
+                window.speechSynthesis.cancel();
+                presentSlide(currentSlideIndex + 1);
             }
         });
     </script>
