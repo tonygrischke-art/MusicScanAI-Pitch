@@ -267,6 +267,12 @@
         </button>
     </footer>
 
+    <!-- Narration Indicator -->
+    <div class="narration-indicator" id="narrationIndicator" style="display: none;">
+        <span class="narration-dot"></span>
+        <span id="narrationText">Narrating...</span>
+    </div>
+
     <!-- Presentation Logic Script -->
     <style>
         @keyframes fadeInUp {
@@ -292,6 +298,26 @@
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.3); opacity: 0.7; }
+        }
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideUpBar {
+            from { height: 0; }
+            to { height: 100%; }
         }
         .slide {
             position: absolute;
@@ -354,6 +380,41 @@
         .progress-bar { display: none; }
         .progress-fill { display: none; }
         .slide-counter { display: none; }
+        .narration-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--accent);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .narration-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @media (max-width: 1024px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .metric-grid { grid-template-columns: repeat(2, 1fr); }
+            .slide { margin: 20px 0; }
+            h2 { font-size: 2rem; }
+            .hero-content h1 { font-size: 3rem; }
+        }
+        @media (max-width: 768px) {
+            .slide { padding: 20px; }
+            .content-card { padding: 20px; }
+            .chart-container { padding: 20px; }
+        }
     </style>
     <script>
         let currentSlide = 1;
@@ -455,16 +516,19 @@
         function toggleAutoPlay() {
             const btnText = document.getElementById('playText');
             const playIcon = document.getElementById('playIcon');
+            const narrationIndicator = document.getElementById('narrationIndicator');
             if (isAutoPlaying) {
                 clearTimeout(autoPlayTimer);
                 autoPlayTimer = null;
                 isAutoPlaying = false;
                 btnText.innerText = 'Auto-Run';
                 playIcon.className = 'fa-solid fa-play text-indigo-400';
+                narrationIndicator.style.display = 'none';
             } else {
                 isAutoPlaying = true;
                 btnText.innerText = 'Pause';
                 playIcon.className = 'fa-solid fa-pause text-amber-400';
+                narrationIndicator.style.display = 'flex';
                 scheduleNextSlide();
             }
         }
